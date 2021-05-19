@@ -5,9 +5,9 @@
       color="primary"
       dark
     >
-      <div class="d-flex align-center">
+      <div class="d-flex align-center" @click="returnHome">
         <v-icon class="mr-4" large>mdi-warehouse</v-icon>
-      <v-toolbar-title>WarehouseApp</v-toolbar-title>
+        <v-toolbar-title>WarehouseApp</v-toolbar-title>
       </div>
       <v-spacer></v-spacer>
       <v-btn
@@ -37,6 +37,11 @@ export default {
   computed: {
     theme() {
       return (this.$vuetify.theme.dark) ? 'dark' : 'light';
+    },
+  },
+  methods: {
+    returnHome() {
+      this.$router.push('/');
     },
   },
 };
