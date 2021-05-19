@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app :style="{background: $vuetify.theme.themes[theme].background}">
     <v-app-bar
       app
       color="primary"
@@ -37,7 +37,7 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
+    <v-main style="background: 'background'">
       <router-view/>
     </v-main>
   </v-app>
@@ -51,5 +51,10 @@ export default {
   data: () => ({
     //
   }),
+  computed: {
+    theme() {
+      return (this.$vuetify.theme.dark) ? 'dark' : 'light';
+    },
+  },
 };
 </script>
